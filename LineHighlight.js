@@ -15,6 +15,7 @@ var previousTarget = null;
 var previousTargetHTML = null;
  
 var init = function() {
+    alert(init);
     document.addEventListener('click',myClickHandler,false);
 }
 
