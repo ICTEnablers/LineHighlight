@@ -74,7 +74,4 @@ var getHTMLOfSelection = function() {
 
 init();
 
-}
-
-
-}
+})(window);
