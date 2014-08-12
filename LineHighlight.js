@@ -15,7 +15,7 @@ var previousTarget = null;
 var previousTargetHTML = null;
  
 var init = function() {
-    $("body").click(function(){ myClickHandler(event); });
+    document.body.addEventListener('click',myClickHandler,false);
 }
 
 var getHTMLOfSelection = function() {
