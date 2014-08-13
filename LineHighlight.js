@@ -43,9 +43,9 @@ var getHTMLOfSelection = function() {
     }
  
  var myClickHandler = function(event) {
-   	 var backwardSelection;
-   	 var forwardSelection;
-   	 var rowHTML;
+     var backwardSelection;
+     var forwardSelection;
+     var lineHTML;
 
      var selectionPoint = window.getSelection();
      selectionPoint.modify('extend','backward','lineboundary');        
@@ -53,7 +53,8 @@ var getHTMLOfSelection = function() {
 
      selectionPoint.modify('extend','forward','lineboundary');
      forwardSelection = getHTMLOfSelection();
-     rowHTML = backwardSelection+forwardSelection;
+     
+     lineHTML = backwardSelection+forwardSelection;
 
    	 selectionPoint.modify('move','forward','character');
    	
@@ -68,8 +69,15 @@ var getHTMLOfSelection = function() {
    	 originalHTML = org; //Save for restoring
    	 
    	 //Change the current line
-     var res = org.replace(rowHTML,"<span style=\"background-color: yellow;\">"+rowHTML+"</span>");       
-     event.target.innerHTML = res;        
+     var res = null;
+     if(org.length>lineHTML.length) {
+     	res = org.replace(lineHTML,"<span style=\"background-color: yellow;\">"+lineHTML+"</span>");
+     }
+     else {
+     	res = "<span style=\"background-color: yellow;\">"+org+"</span>";
+     }       
+     event.target.innerHTML = res;
+}
 }
 
 init();
