@@ -55,20 +55,27 @@ var getHTMLOfSelection = function() {
      forwardSelection = getHTMLOfSelection();
      
      lineHTML = backwardSelection+forwardSelection;
-
-   	 selectionPoint.modify('move','forward','character');
+     
+     //cloneContents closes any open tags check if the string ends with a tag
+     if(lineHTML[lineHTML.length-1]=='>') {
+  	var startIndexOfTag = lineHTML.length-1;
+	startIndexOfTag=lineHTML.lastIndexOf('<');
+	lineHTML = lineHTML.slice(0,startIndexOfTag);
+     }
+   	 
+     selectionPoint.modify('move','forward','character');
    	
-   	 //Restore the previously clicked line	
-	 if(previousTarget != null) {
-   		previousTarget.innerHTML = originalHTML;
-   	 }
-   	 previousTarget = event.target;
+     //Restore the previously clicked line	
+     if(previousTarget != null) {
+   	previousTarget.innerHTML = originalHTML;
+     }
+     previousTarget = event.target;
    	 
-   	 //Change the selected line
-   	 var org = event.target.innerHTML;
-   	 originalHTML = org; //Save for restoring
+     //Change the selected line
+     var org = event.target.innerHTML;
+     originalHTML = org; //Save for restoring
    	 
-   	 //Change the current line
+     //Change the current line
      var res = null;
      if(org.length>lineHTML.length) {
      	res = org.replace(lineHTML,"<span style=\"background-color: yellow;\">"+lineHTML+"</span>");
