@@ -78,7 +78,7 @@ var getHTMLOfSelection = function() {
      }       
      event.target.innerHTML = res;
 }
-}
+
 
 init();
 
