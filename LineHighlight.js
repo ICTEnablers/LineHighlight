@@ -20,11 +20,7 @@ var init = function() {
 
 var getHTMLOfSelection = function() {
       var range;
-      if (document.selection && document.selection.createRange) {
-        range = document.selection.createRange();
-        return range.htmlText;
-      }
-      else if (window.getSelection) {
+      if (window.getSelection) {
         var selection = window.getSelection();
         if (selection.rangeCount > 0) {
           range = selection.getRangeAt(0);
