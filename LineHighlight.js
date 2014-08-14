@@ -16,6 +16,21 @@ var previousTargetHTML = null;
  
 var init = function() {
     document.addEventListener('click',myClickHandler,false);
+    if ( !document.getElementById('LineHighlight') ) {
+    	var newDiv = document.createElement('div');
+    	var newContent = "<a href=\"http://www.ictenablers.com/LineHighlight/\">LineHighlight</a>";
+    	newDiv.setAttribute('id', 'LineHighlight');
+    	newDiv.style.position = 'fixed';
+    	newDiv.style.bottom = '0';
+    	newDiv.style.right = '0';
+    	newDiv.style.backgroundColor = 'yellow';//'rgba(255, 255, 0, 0.8)';
+    	newDiv.style.padding = '0.4em 1em';
+    	newDiv.style.color = 'black';
+    	newDiv.style.fontFamily = 'monospace';
+    	newDiv.style.zIndex = '9999';
+    	newDiv.innerHTML = newContent;
+    	document.body.appendChild(newDiv);
+  }
 }
 
 var getHTMLOfSelection = function() {
