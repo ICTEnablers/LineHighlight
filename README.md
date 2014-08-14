@@ -1,4 +1,2 @@
-LineHighlight
-=============
-
-A bookmarklet to highlight the text line a user has clicked on.
+<a href="http://www.ictenablers.com/linehighlight/">LineHighlight project page.</a>
+====================================================================================
