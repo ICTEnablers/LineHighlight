@@ -29,9 +29,9 @@ var init = function() {
     var url = "/LineHighlight/" + location.host + location.pathname;
 
     //used "linehighlightGA" as a 'namespace' to not screw up the real GA for that domain
-    _gaq.push(['linehighlightGA._setAccount', 'UA-48177410-2']);
-    _gaq.push(['linehighlightGA._setDomainName']);//not sure if i need this
-    _gaq.push(['linehighlightGA._trackPageview', url]);
+    ga.push(['linehighlightGA._setAccount', 'UA-48177410-2']);
+    ga.push(['linehighlightGA._setDomainName']);//not sure if i need this
+    ga.push(['linehighlightGA._trackPageview', url]);
     
     document.addEventListener('click',myClickHandler,false);
     if ( !document.getElementById('LineHighlight') ) {
