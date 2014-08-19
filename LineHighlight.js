@@ -17,29 +17,6 @@ var previousTargetHTML = null;
 var init = function() {
 	
     //Add Google Analytics
-    /*(function() {
-    //made a unique name to be able to sort in GA and added domain URL/URI      
-    var url = "/LineHighlight/" + location.host + location.pathname;
-
-    //used "anotherGA" as a 'namespace' to not screw up the real GA for that domain
-     var _gaq = _gaq || [];
-    _gaq.push(['linehighlightGA._setAccount', 'UA-48177410-2']);
-    _gaq.push(['linehighlightGA._setDomainName']);
-    _gaq.push(['linehighlightGA._trackPageview', url]);
-    
-    //loading ga.js - not greatest idea, but can't rely on page having ga.js already
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-
-
-    _gaq._createAsyncTracker('UA-48177410-2');
-    
-    })();*/
-  
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
