@@ -29,7 +29,7 @@ var init = function() {
     //made a unique name to be able to sort in GA and added domain URL/URI      
     var url = "/LineHighlight/" + location.host + location.pathname;
 
-    _gaq._createAsyncTracker('UA-65432-1');
+    _gaq._createAsyncTracker('UA-48177410-2');
     //used "anotherGA" as a 'namespace' to not screw up the real GA for that domain
     _gaq.push(['linehighlightGA._setAccount', 'UA-48177410-2']);
     _gaq.push(['linehighlightGA._setDomainName']);
