@@ -18,6 +18,15 @@ var init = function() {
 	
     //Add Google Analytics
     (function() {
+    //made a unique name to be able to sort in GA and added domain URL/URI      
+    var url = "/LineHighlight/" + location.host + location.pathname;
+
+    //used "anotherGA" as a 'namespace' to not screw up the real GA for that domain
+     var _gaq = _gaq || [];
+    _gaq.push(['linehighlightGA._setAccount', 'UA-48177410-2']);
+    _gaq.push(['linehighlightGA._setDomainName']);
+    _gaq.push(['linehighlightGA._trackPageview', url]);
+    
     //loading ga.js - not greatest idea, but can't rely on page having ga.js already
     var ga = document.createElement('script');
     ga.type = 'text/javascript';
@@ -26,14 +35,9 @@ var init = function() {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
 
-    //made a unique name to be able to sort in GA and added domain URL/URI      
-    var url = "/LineHighlight/" + location.host + location.pathname;
 
-    _gaq._createAsyncTracker('UA-48177410-2');
-    //used "anotherGA" as a 'namespace' to not screw up the real GA for that domain
-    _gaq.push(['linehighlightGA._setAccount', 'UA-48177410-2']);
-    _gaq.push(['linehighlightGA._setDomainName']);
-    _gaq.push(['linehighlightGA._trackPageview', url]);
+    //_gaq._createAsyncTracker('UA-48177410-2');
+    
     })();
   
     
