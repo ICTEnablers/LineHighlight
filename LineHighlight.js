@@ -36,7 +36,7 @@ var init = function() {
     s.parentNode.insertBefore(ga, s);
 
 
-    //_gaq._createAsyncTracker('UA-48177410-2');
+    _gaq._createAsyncTracker('UA-48177410-2');
     
     })();
   
